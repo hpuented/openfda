@@ -8,7 +8,7 @@ headers = {'User-Agent': 'http-client'}
 conexion = http.client.HTTPSConnection("api.fda.gov")
 
 #Mando la petición GET para que la página web me devuelva la información,
-# pero esta vez solo quiero que me devuelva la información de 10 medicamentos (limit=10)
+#pero esta vez solo quiero que me devuelva la información de 10 medicamentos (limit=10)
 conexion.request("GET", "/drug/label.json?limit=10", None, headers)
 
 #Creo la variable llamada "respuesta", que contiene la respuesta de openfda
