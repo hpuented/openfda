@@ -33,7 +33,6 @@ informacion = json.loads(contenido)
 
 for i in range (len (informacion['results'])):
     medicamento = informacion['results'][i]
-
     print ('El ID del medicamento ' + str(i + 1) + ' es: ',medicamento['id'])
 
 
