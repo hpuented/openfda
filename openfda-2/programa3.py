@@ -3,11 +3,10 @@ import json
 
 headers = {'User-Agent': 'http-client'}
 
-
-
+#Creo un bucle while
 while True:
 
-    #Cre la conexión con la página web
+    #Creo la conexión con la página web
     conexion = http.client.HTTPSConnection("api.fda.gov")
 
     #Mando la petición GET, pero con un límite de 100; además, establezco que la búsqueda sea solamente del acetylsalicylic.
@@ -38,7 +37,7 @@ while True:
         else:
             print("El nombre del fabricante no está disponible")
 
-
+    #Rompo el bucle while
     break
 
 
