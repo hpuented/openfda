@@ -36,7 +36,6 @@ while True:
 
         else:
             print("El nombre del fabricante no está disponible")
-
     #Rompo el bucle while
     break
 
