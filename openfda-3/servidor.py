@@ -19,6 +19,7 @@ def lista_medicamentos():
     conexion.request("GET", "/drug/label.json?limit=10", None, headers)
 
     respuesta = conexion.getresponse()
+    print(respuesta.status, respuesta.reason)
 
     if respuesta.status == 404:
         print("Recurso no encontrado")
@@ -33,9 +34,11 @@ def lista_medicamentos():
         medicamento = informacion['results'][i]
 
         if (medicamento['openfda']):
+            print('El nombre del medicamento ' + str(i + 1) + ' es: ', medicamento['openfda']['substance_name'][0])
             lista1.append(medicamento['openfda']['substance_name'][0])
 
         else:
+            print('El nombre del medicamento ' + str(i+1) + ' no esta especificado')
             lista1.append("El nombre no esta especificado")
 
     #Ahora "lista1" ya no está vacía, contiene el listado de los medicamentos
@@ -45,10 +48,12 @@ def lista_medicamentos():
 #Esta clase utiliza herencia
 class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
-
+    #Utilizo el método do_GET
     def do_GET(self):
 
         self.send_response(200)
+
+        #Cabecera que indica que el contenido que envio al cliente es html
         self.send_header('Content-type', 'text/html')
         self.end_headers()
 
@@ -91,6 +96,7 @@ try:
 except KeyboardInterrupt:
     print("")
     print("Servidor interrumpido por el usuario")
+
 
 print("")
 print("Servidor parado")
