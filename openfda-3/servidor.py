@@ -74,7 +74,6 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         for i in lista2:
             contenido += "<ul><li>" + i + "</li></ul>" + "<br>"
 
-        #Contesta a la petición con la inforación que tiene la variable "contenido"
         self.wfile.write(bytes(contenido, "utf8"))
         return
 
