@@ -217,8 +217,8 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             medicamentos = informacion['results']
 
             for resultado in medicamentos:
-                if ('active_ingredient' in resultado['openfda']):
-                    lista_medicamentos.append(resultado['openfda']['active_ingredient'][0])
+                if ('generic_name' in resultado['openfda']):
+                    lista_medicamentos.append(resultado['openfda']['generic_name'][0])
                 else:
                     lista_medicamentos.append('Desconocido')
 
